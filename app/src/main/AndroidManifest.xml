@@ -21,17 +21,19 @@
 
     </activity>
 
-    <activity android:name=".NotLoggedInActivity" />
+    <activity android:name=".NotLoggedInActivity"
+      android:theme="@style/Theme.AppCompat.NoActionBar" />
 
     <activity
       android:name=".MainActivity"
-      android:label="@string/title_activity_main">
+      android:label="@string/title_activity_main"
+      android:theme="@style/Theme.AppCompat.NoActionBar" >
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
-    </activity>
+   </activity>
 
     <activity
       android:name=".LoginActivity"
