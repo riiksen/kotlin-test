@@ -17,12 +17,16 @@ class MainActivity : AppCompatActivity() {
         message.setText(R.string.title_home)
         return@OnNavigationItemSelectedListener true
       }
-      R.id.navigation_dashboard -> {
+      R.id.navigation_account -> {
         message.setText(R.string.title_dashboard)
         return@OnNavigationItemSelectedListener true
       }
       R.id.navigation_notifications -> {
         message.setText(R.string.title_notifications)
+        return@OnNavigationItemSelectedListener true
+      }
+      R.id.navigation_jobs -> {
+        message.setText(R.string.title_jobs)
         return@OnNavigationItemSelectedListener true
       }
     }
@@ -35,7 +39,11 @@ class MainActivity : AppCompatActivity() {
     val am = AccountManager.get(this)
     val accounts = am.getAccountsByType("pl.mybooker")
 
-    if (accounts.isEmpty()) { // If user has no logged accounts
+
+    setContentView(R.layout.activity_main)
+    navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+
+    if (false) { // accounts.isEmpty()) { // If user has no logged accounts
       val intent = Intent(this, NotLoggedInActivity::class.java)
       startActivity(intent)
     } else {
